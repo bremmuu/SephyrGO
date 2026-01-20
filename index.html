@@ -1,29 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SephyrGO</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SephyrGO</title>
+  <link rel="icon" href="images/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body>
 
-    <div class="bg-[url('images/Autumn_People.jpg')] bg-center bg-cover">
-        <nav class="flex items-center">
-            <img src="images/shoes.png">
-            <ul class="flex-1 text-center">
-                <li class="list-none inline-block"><a href="#" class="no-underline text-white px-2">Home</a></li>
-                <li class="list-none inline-block"><a href="#" class="no-underline text-white px-2">About</a></li>
-                <li class="list-none inline-block"><a href="#" class="no-underline text-white px-2">Features</a></li>
-                <li class="list-none inline-block"><a href="#" class="no-underline text-white px-2">Contact</a></li>
-            </ul>
-            <img src="images/canvas.png">
-        </nav>
+<body class="bg-orange-700 text-white">
+  <div class="min-h-screen bg-[url('images/Autumn_People.jpg')] bg-cover bg-center">
+  <!-- Navigation -->
+  <nav class="flex items-center justify-between px-12 py-6 bg-black/50">
+    <img src="images/canvas.png" class="w-32" alt="Logo">
 
-    <footer>
-        <p class="text-white">&copy; 2026 Brem Sephyr</p>
-    </footer>
+    <ul class="flex gap-6 font-semibold">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#assess">Assess My Fitness</a></li>
+      <li><a href="#bmi">BMI Table</a></li>
+      <li><a href="#account">My Account</a></li>
+    </ul>
 
-    </div> 
+    <img src="images/shoes.png" class="w-32" alt="Product">
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="flex flex-col items-center justify-center text-center px-6 h-[70vh]">
+    <h1 class="text-6xl font-bold mb-6">SephyrGO</h1>
+    <p class="text-xl max-w-2xl mb-8">
+      Experience the freedom of movement with SephyrGO — your ultimate companion for an active lifestyle.
+    </p>
+    <a href="#home">
+      <button class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+        Get Started
+      </button>
+    </a>
+  </section>
+
+  <!-- Home / Introduction -->
+<section id="home" class="px-12 py-24 bg-black/50">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Text -->
+    <div>
+      <h2 class="text-4xl font-bold mb-6">What is SephyrGO?</h2>
+      <p class="text-lg mb-4">
+        SephyrGO is a fitness web app designed to help people reach a healthy body mass index (BMI) through
+        simple and effective movement — walking, jogging, and running.
+      </p>
+      <p class="text-lg">
+        Our goal is to promote sustainable fitness habits by providing personalized activity recommendations
+        that are easy to follow and suitable for everyday life.
+      </p>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="flex justify-center">
+      <img
+        id="home-carousel"
+        src="images/fitness1.jpg"
+        alt="Fitness activity"
+        class="rounded-xl shadow-lg object-cover w-[600px] h-[400px] transition-opacity duration-700"
+      >
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const images = [
+    "images/fitness1.jpg",
+    "images/fitness2.jpg",
+    "images/fitness3.jpg",
+  ];
+
+  let current = 0;
+  const carousel = document.getElementById("home-carousel");
+
+  setInterval(() => {
+    // Fade out
+    carousel.classList.add("opacity-0");
+
+    setTimeout(() => {
+      // Change image
+      current = (current + 1) % images.length;
+      carousel.src = images[current];
+
+      // Fade in
+      carousel.classList.remove("opacity-0");
+    }, 350); // half of transition duration
+  }, 3000); // every 3 seconds
+</script>
+
+
+  <!-- Benefits -->
+  <section id="benefits" class="px-12 py-24 bg-black/40">
+    <h2 class="text-4xl font-bold mb-12 text-center">Why Move?</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-black/50 p-6 rounded-xl">
+        <h3 class="text-2xl font-semibold mb-3">Walking</h3>
+        <p>
+          Low-impact and accessible for all fitness levels. Walking improves cardiovascular health,
+          supports weight management, and is easy to maintain long-term.
+        </p>
+      </div>
+
+      <div class="bg-black/50 p-6 rounded-xl">
+        <h3 class="text-2xl font-semibold mb-3">Jogging</h3>
+        <p>
+          A balanced form of exercise that increases endurance and burns more calories while remaining
+          manageable for most people.
+        </p>
+      </div>
+
+      <div class="bg-black/50 p-6 rounded-xl">
+        <h3 class="text-2xl font-semibold mb-3">Running</h3>
+        <p>
+          High-intensity movement that builds stamina, strengthens the heart, and maximizes calorie burn
+          in shorter periods of time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assess My Fitness -->
+  <section id="assess" class="px-12 py-24 bg-black/50">
+    <h2 class="text-4xl font-bold mb-8 text-center">Assess My Fitness</h2>
+
+    <form class="max-w-3xl mx-auto grid gap-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <input type="number" placeholder="Age" class="p-3 rounded text-black">
+        <select class="p-3 rounded text-black">
+          <option>Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <input type="number" placeholder="Height (cm)" class="p-3 rounded text-black">
+        <input type="number" placeholder="Weight (kg)" class="p-3 rounded text-black">
+      </div>
+
+      <select class="p-3 rounded text-black">
+        <option>Preferred Activity</option>
+        <option>Walking</option>
+        <option>Jogging</option>
+        <option>Running</option>
+      </select>
+
+      <button class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+        Get Assessment
+      </button>
+    </form>
+  </section>
+
+  <!-- BMI Table -->
+  <section id="bmi" class="px-12 py-24 bg-black/40">
+    <h2 class="text-4xl font-bold mb-8 text-center">BMI Classification</h2>
+
+    <div class="max-w-xl mx-auto">
+      <table class="w-full border border-white">
+        <tr class="border-b">
+          <th class="p-3">BMI Range</th>
+          <th class="p-3">Category</th>
+        </tr>
+        <tr class="border-b">
+          <td class="p-3">&lt; 18.5</td>
+          <td class="p-3">Underweight</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-3">18.5 – 24.9</td>
+          <td class="p-3">Normal</td>
+        </tr>
+        <tr class="border-b">
+          <td class="p-3">25 – 29.9</td>
+          <td class="p-3">Overweight</td>
+        </tr>
+        <tr>
+          <td class="p-3">30+</td>
+          <td class="p-3">Obese</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- My Account -->
+  <section id="account" class="px-12 py-24 bg-black/50 text-center">
+    <h2 class="text-4xl font-bold mb-6">My Account</h2>
+    <p class="max-w-2xl mx-auto text-lg">
+      Creating an account will allow you to track your progress, log daily activities, and receive adaptive
+      fitness plans based on your performance. This feature will be available soon.
+    </p>
+  </section>
+  </div>
+</body>
+</html>
