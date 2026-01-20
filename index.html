@@ -15,7 +15,7 @@
     <nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-black/70 backdrop-blur-md">
       
       <a href="#hero">
-        <img src="images/canvas.png" class="w-24 md:w-32" alt="Logo">
+        <img src="images/canvas.png" class="w-20 md:w-30" alt="Logo">
       </a>
 
       <ul class="hidden md:flex gap-6 font-semibold">
@@ -25,13 +25,13 @@
         <li><a href="#account">My Account</a></li>
       </ul>
 
-      <img src="images/shoes.png" class="hidden md:block w-24 md:w-32" alt="Product">
+<button id="menu-btn" class="md:hidden text-white">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
 
-      <button id="menu-btn" class="md:hidden text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
     </nav>
 
     <!-- Mobile Menu -->
@@ -69,29 +69,57 @@
           </p>
         </div>
         <div class="flex justify-center">
-          <img id="home-carousel" src="images/fitness1.jpg" alt="Fitness activity" class="rounded-xl shadow-lg object-cover w-full md:w-[600px] h-[300px] md:h-[400px] transition-opacity duration-700">
+          <img id="home-carousel" src="images/fitness1.jpg" alt="Fitness activity" class="rounded-xl shadow-lg object-cover w-full md:w-[600px] h-[400px] md:h-[400px] transition-opacity duration-700">
         </div>
       </div>
     </section>
 
-    <!-- Benefits -->
-    <section id="benefits" class="px-6 md:px-12 py-24 bg-black/40">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Why Move?</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-black/50 p-6 rounded-xl">
-          <h3 class="text-2xl font-semibold mb-3">Walking</h3>
-          <p>Low-impact and accessible for all fitness levels. Walking improves cardiovascular health, supports weight management, and is easy to maintain long-term.</p>
-        </div>
-        <div class="bg-black/50 p-6 rounded-xl">
-          <h3 class="text-2xl font-semibold mb-3">Jogging</h3>
-          <p>A balanced form of exercise that increases endurance and burns more calories while remaining manageable for most people.</p>
-        </div>
-        <div class="bg-black/50 p-6 rounded-xl">
-          <h3 class="text-2xl font-semibold mb-3">Running</h3>
-          <p>High-intensity movement that builds stamina, strengthens the heart, and maximizes calorie burn in shorter periods of time.</p>
-        </div>
+<!-- Benefits -->
+<section id="benefits" class="px-6 md:px-12 py-24 bg-black/40">
+  <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Why Move?</h2>
+
+  <div class="flex flex-col md:flex-row gap-6 justify-center items-center md:overflow-x-auto pb-4">
+
+    
+    <!-- Walking -->
+    <div class="flex-shrink-0 w-80 flex flex-col items-center gap-4">
+      <img src="gifs/walking.gif" alt="Walking" class="w-48 h-96 object-cover rounded-xl">
+      <div class="bg-black/50 p-6 rounded-xl flex flex-col justify-center items-center text-center w-full">
+        <h3 class="text-2xl font-semibold mb-3">Walking</h3>
+        <p>
+          Low-impact and accessible for all fitness levels. It improves cardiovascular health, supports weight management, and is easy to maintain long-term.
+        </p>
       </div>
-    </section>
+    </div>
+
+    <!-- Jogging -->
+    <div class="flex-shrink-0 w-80 flex flex-col items-center gap-4">
+      <img src="gifs/jogging.gif" alt="Jogging" class="w-48 h-96 object-cover rounded-xl">
+      <div class="bg-black/50 p-6 rounded-xl flex flex-col justify-center items-center text-center w-full">
+        <h3 class="text-2xl font-semibold mb-3">Jogging</h3>
+        <p>
+          A balanced form of exercise that increases endurance and burns more calories while remaining manageable for most people.<br><br>
+        </p>
+      </div>
+    </div>
+
+    <!-- Running -->
+    <div class="flex-shrink-0 w-80 flex flex-col items-center gap-4">
+      <img src="gifs/running.gif" alt="Running" class="w-48 h-96 object-cover rounded-xl">
+      <div class="bg-black/50 p-6 rounded-xl flex flex-col justify-center items-center text-center w-full">
+        <h3 class="text-2xl font-semibold mb-3">Running</h3>
+        <p>
+          High-intensity movement that builds stamina, strengthens the heart, and maximizes calorie burn in shorter periods of time.<br><br>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
 
     <!-- Assess My Fitness -->
     <section id="assess" class="px-6 md:px-12 py-24 bg-black/50">
@@ -151,13 +179,16 @@
     </section>
 
     <!-- My Account -->
-    <section id="account" class="px-6 md:px-12 py-24 bg-black/50 text-center">
+    <section id="account" class="px-6 md:px-12 py-20 bg-black/70 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">My Account</h2>
       <p class="max-w-2xl mx-auto text-lg">
-        Creating an account will allow you to track your progress, log daily activities, and receive adaptive fitness plans based on your performance. This feature will be available soon.
+        Creating an account will allow you to track your progress, log daily activities, and receive adaptive fitness plans based on your performance. This feature will be available *soon*.
       </p>
     </section>
-
+           <footer class="bg-black/50 text-center py-6 flex flex-col items-center gap-0 bg-black/70">
+            <img src="images/shoes.png" class="md:block w-20 md:w-30" alt="Voila!">
+            <p>Brem Sephyr© 2026</p>
+        </footer> 
   </div>
 
   <script>
